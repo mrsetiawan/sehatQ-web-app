@@ -10,12 +10,14 @@ import {
 import './index.css'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
-// import { store } from './modules'
+import { store } from './modules'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </Router>,
   document.getElementById('root')
 )
 

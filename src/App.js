@@ -1,48 +1,22 @@
 import { 
   React,
-  Slider,
   Container,
   FontAwesomeIcon,
-  faHome
+  faHome,
+  useEffect,
+  loadable
 } from './libraries'
 import './App.css'
-
+import { LoadingScreen } from './components'
 const App = () => {
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
-  }
+
+  const Home = loadable(() => import('./pages/home'))
 
   return (
-    <Container xs>
-      <p>tes</p>
-      <FontAwesomeIcon icon={faHome} />
-
-      <Slider {...settings}>
-        <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
-      </Slider>
-    </Container>
+    <Home />
   )
 }
 
 export default App
+{/* <FontAwesomeIcon icon={faHome} />
+      <LoadingScreen count='3' duration='1' /> */}
