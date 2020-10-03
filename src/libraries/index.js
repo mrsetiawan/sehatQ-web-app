@@ -9,6 +9,7 @@ import { Helmet } from 'react-helmet'
 import FacebookLogin from 'react-facebook-login'
 import Skeleton from 'react-loading-skeleton'
 import loadable from '@loadable/component'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 export {
   React,
@@ -23,7 +24,8 @@ export {
   loadable,
   Helmet,
   FacebookLogin,
-  Skeleton
+  Skeleton,
+  LazyLoadImage
 }
 
 export * from 'react'
@@ -41,3 +43,4 @@ export * from 'react-facebook-login'
 export * from '@fortawesome/free-solid-svg-icons'
 export * from '@fortawesome/react-fontawesome'
 export * from 'react-loading-skeleton'
+export * from 'react-lazy-load-image-component'

@@ -1,5 +1,11 @@
-import LoadingScreen from './Skeleton'
+import LoadingScreen from './skeleton'
+import Title from './title'
+import Text from './text'
+import Images from './images'
 
 export {
-  LoadingScreen
+  LoadingScreen,
+  Title,
+  Text,
+  Images
 }

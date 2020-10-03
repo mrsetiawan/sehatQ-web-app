@@ -3,17 +3,23 @@ import {
   Container,
   FontAwesomeIcon,
   faHome,
-  useEffect,
+  Switch,
+  Route,
   loadable
 } from './libraries'
 import './App.css'
-import { LoadingScreen } from './components'
-const App = () => {
 
+const App = () => {
   const Home = loadable(() => import('./pages/home'))
+  const Member = loadable(() => import('./pages/member'))
+  const Detail = loadable(() => import('./pages/detail'))
 
   return (
-    <Home />
+    <Switch>
+      <Route path='/' exact component={Member} />
+      <Route path='/home' exact component={Home} />
+      <Route path='/detail' exact component={Detail} />
+    </Switch>
   )
 }
 
