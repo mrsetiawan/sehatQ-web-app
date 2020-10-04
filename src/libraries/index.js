@@ -10,7 +10,6 @@ import FacebookLogin from 'react-facebook-login'
 import { useGoogleLogin } from 'react-google-login'
 import Skeleton from 'react-loading-skeleton'
 import loadable from '@loadable/component'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 export {
   React,
@@ -26,7 +25,6 @@ export {
   Helmet,
   FacebookLogin,
   Skeleton,
-  LazyLoadImage,
   useGoogleLogin
 }
 
@@ -44,6 +42,6 @@ export * from 'react-bootstrap'
 export * from 'react-facebook-login'
 export * from 'react-google-login'
 export * from '@fortawesome/free-solid-svg-icons'
+export * from '@fortawesome/free-brands-svg-icons'
 export * from '@fortawesome/react-fontawesome'
 export * from 'react-loading-skeleton'
-export * from 'react-lazy-load-image-component'

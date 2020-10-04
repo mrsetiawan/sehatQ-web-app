@@ -2,9 +2,11 @@ import {
   React,
   Switch,
   Route,
+  Fragment,
   loadable
 } from './libraries'
 import './App.css'
+import { ScrollToTop } from './utils'
 
 const App = () => {
   const Home = loadable(() => import('./pages/home'))
@@ -13,16 +15,19 @@ const App = () => {
   const Search = loadable(() => import('./pages/search'))
   const Wishlist = loadable(() => import('./pages/wishlist'))
   const Purchased = loadable(() => import('./pages/purchased'))
-  
+
   return (
-    <Switch>
-      <Route path='/home' exact component={Home} />
-      <Route path='/detail' exact component={Detail} />
-      <Route path='/search' exact component={Search} />
-      <Route path='/wishlist' exact component={Wishlist} />
-      <Route path='/purchased' exact component={Purchased} />
-      <Route path='/' exact component={Member} />
-    </Switch>
+    <Fragment>
+      <ScrollToTop />
+      <Switch>
+        <Route path='/home' exact component={Home} />
+        <Route path='/detail' exact component={Detail} />
+        <Route path='/search' exact component={Search} />
+        <Route path='/wishlist' exact component={Wishlist} />
+        <Route path='/purchased' exact component={Purchased} />
+        <Route path='/' exact component={Member} />
+      </Switch>
+    </Fragment>
   )
 }
 

@@ -2,7 +2,6 @@ import {
   React,
   Fragment,
   useEffect,
-  Helmet,
   useDispatch,
   useSelector,
   Container,
@@ -10,12 +9,15 @@ import {
   useHistory
 } from '../../libraries'
 import {
+  HelmetSection,
   Categories,
   Navigator,
-  LoadingScreen
+  LoadingScreen,
+  Images,
+  Title
 } from '../../components'
 import { getProductList } from '../../modules'
-import { IFavDefault, IFavActive } from '../../assets'
+import { IFavDefault, IheartSolid, IheartRegular } from '../../assets'
 import { useIsMounted } from '../../utils'
 
 const Home = () => {
@@ -37,13 +39,12 @@ const Home = () => {
   
   return (
     <Fragment>
-      <Helmet>
-        <title>Home</title>
-        <meta name='description' content='product list dari sehatQ' />
-      </Helmet>
-
+      <HelmetSection
+        title='Home'
+        desc='product list dari sehatQ'
+      />
       <div className='d-flex flex-column justify-content-between'>
-        <div className='d-flex flex-row justify-content-center align-items-center shadow-sm p-3 mb-3'>
+        <div className='d-flex flex-row justify-content-center align-items-center position-sticky shadow-sm p-3 mb-3'>
           <div className='flex-shrink-1 pr-3'>
             <img src={IFavDefault} alt='fav' />
           </div>
@@ -52,32 +53,32 @@ const Home = () => {
           </div>
         </div>
         <div>
-          {state.data.loading && Object.keys(state.data.list).length === 0 ? (
-            <LoadingScreen count='5' duration='20' />
-          ) : (
-            <Categories list={state.data.list.category} />
+          {Object.keys(state.data.loading) && (
+            <Fragment>
+              <Categories list={state.data.list.category && state.data.list.category} />
+            
+            </Fragment>
           )}
-
           <Container>
-            {state.data.list && state.data.list.length === 0 ? (
-              <LoadingScreen count='5' duration='20' />
-            ) : (
+            {Object.keys(state.data.loading) && (
               <div className='py-3 mb-5'>
                 {state.data.list.productPromo && state.data.list.productPromo.map(item => {
                   return (
                     <div key={item.id} className='d-flex flex-column shadow mb-3'>
                       <Link to={{ pathname: '/detail', state: item }}>
                         <div className='position-relative'>
-                          <img src={item.imageUrl} className='img-product' />
+                          <Images image={item.imageUrl || <LoadingScreen />} />
                           <div className=' wishlist'>
                             {item.loved === 1 ? (
-                              <img src={IFavActive} alt='unfav' className='w-100' />
+                              <img src={IheartRegular || <LoadingScreen />} alt='unfav' className='w-75' />
                             ) : (
-                              <img src={IFavDefault} alt='fav' className='w-100' />
+                              <img src={IheartSolid || <LoadingScreen />} alt='fav' className='w-75' />
                             )}
                           </div>
                         </div>
-                        <p className='mb-0 py-3 px-2'>{item.title}</p>
+                        <div className='p-3'>
+                          <Title title={item.title || <LoadingScreen />} />
+                        </div>
                       </Link>
                     </div>
                   )

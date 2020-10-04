@@ -15,7 +15,6 @@ const Categories = ({ list }) => {
         {list && list.map(item => <CardList key={item.id} type='category' item={item} />)}
       </Slider>
     </Col>
-    
   )
 }
 

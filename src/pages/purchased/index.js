@@ -4,7 +4,12 @@ import {
   useHistory,
   Container
 } from '../../libraries'
-import { Text, Header, ListEmpty, List } from '../../components'
+import { 
+  HelmetSection,
+  Header,
+  ListEmpty,
+  List
+} from '../../components'
 
 const Purchased = () => {
   const history = useHistory()
@@ -12,6 +17,10 @@ const Purchased = () => {
   
   return (
     <div className='d-flex flex-column justify-content-between'>
+      <HelmetSection
+        title='Purchased'
+        desc='promo product'
+      />
       <Header
         onClick={() => history.goBack()}
         title='Purchased'

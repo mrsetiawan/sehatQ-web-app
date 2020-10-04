@@ -44,10 +44,6 @@ import "slick-carousel/slick/slick-theme.css"; */
   justify-content: space-between;
 }
 
-/* .bg-primary-dark {
-  background-color:#2c5f96;
-} */
-
 .h-10 {
   height: 5%;
 }
@@ -63,4 +59,8 @@ import "slick-carousel/slick/slick-theme.css"; */
 
 .my-facebook-button-class metro {
   color: '#ffffff';
+}
+
+.w-10 {
+  width: 10%;
 }

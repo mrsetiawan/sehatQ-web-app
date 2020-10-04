@@ -11,12 +11,13 @@ import {
   faShareAltSquare
 } from '../../libraries'
 import {
+  HelmetSection,
   Text,
   Title,
   Images,
   ToastAlert
 } from '../../components'
-import { IFavDefault, IFavActive } from '../../assets'
+import { IheartSolid, IheartRegular } from '../../assets'
 import { addWishlist, addCart } from '../../modules'
 
 const Detail = () => {
@@ -38,8 +39,13 @@ const Detail = () => {
     const select = { ...state }
     dispatch(addCart(select))
   }
+
   return (
     <Container className='py-3 mb-5'>
+      <HelmetSection
+        title={`Detail - ${state.title}`}
+        desc={state.description}
+      />
       <div className='d-flex flex-column shadow mb-3'>
         <div className='position-relative'>
           <Images
@@ -56,24 +62,28 @@ const Detail = () => {
         </div>
       </div>
       <div className='d-flex flex-row justify-content-between py-3'>
-        <Title title={state.title} />
+        <div>
+          <Title title={state.title} />
+        </div>
         {loved === 0 ? (
-          <div onClick={addToWishlist}>
-            <img src={IFavDefault} alt='unfav' className='w-100' />
+          <div className='w-10' onClick={addToWishlist}>
+            <img src={IheartRegular} alt='fav' className='w-75' />
           </div>
         ) : (
-          <div>
-            <img src={IFavActive} alt='fav' className='w-100' />
+          <div className='w-10'>
+            <img src={IheartSolid} alt='fav' className='w-75' />
           </div>
         )}
       </div>
-      <div>
+      <div className='mb-5'>
         <Text text={state.description} />
       </div>
-      <div className='d-flex justify-content-end'>
-        <Text text={state.price} />
-        <div className='w-25 pl-3'>
-          <Button className='bg-secondary w-100 pl-3' onClick={addToCart}>Buy</Button>
+      <div className='d-flex flex-row justify-content-between fixed-bottom bg-dark p-3'>
+        <div className='align-self-center'>
+          <p className='text-light font-wight-bold mb-0'>Price : <span>{state.price}</span></p>
+        </div>
+        <div className='w-50'>
+          <Button className='bg-primary w-100' onClick={addToCart}>Buy</Button>
         </div>
       </div>
       <ToastAlert

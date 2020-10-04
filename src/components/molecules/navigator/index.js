@@ -25,7 +25,7 @@ const Navigator = () => {
             <NavItem key={`tab-${index}`}>
               <NavLink to={tab.route} className='nav-link' activeClassName='active'>
                 <div className='row d-flex flex-column justify-content-center align-items-center'>
-                  <div>{tab.label}</div>
+                  <p className='mb-0 text-light'>{tab.label}</p>
                 </div>
               </NavLink>
             </NavItem>

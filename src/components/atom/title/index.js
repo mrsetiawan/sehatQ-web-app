@@ -1,5 +1,5 @@
 import { React } from '../../../libraries'
 
-const Title = ({ type, title }) => <p className={type === 'center' ? 'text-center mb-0' : 'text-left font-weight-bold mb-0'}>{title}</p>
+const Title = ({ type, title }) => <h6 className={type === 'center' ? 'text-center text-dark font-weight-normal mb-0' : 'text-left text-dark font-weight-normal mb-0'}>{title}</h6>
 
 export default Title

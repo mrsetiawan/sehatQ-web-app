@@ -1,4 +1,4 @@
-import { React, LazyLoadImage } from '../../../libraries'
+import { React } from '../../../libraries'
 import { INotFound } from '../../../assets'
 
 const Images = ({ type, image, title }) => {
@@ -7,14 +7,11 @@ const Images = ({ type, image, title }) => {
     event.target.src = INotFound
   }
 
-  const loadImage = () => <p>masih load</p>
-
   return (
-    <LazyLoadImage
+    <img
       alt={title}
       src={image}
       onError={handleError}
-      beforeLoad={loadImage}
       className={type === 'category' ? 'w-100 h-25' : 'img-product'}
     />
   )

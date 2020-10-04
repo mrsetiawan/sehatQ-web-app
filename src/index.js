@@ -1,7 +1,7 @@
-import 'bootstrap/dist/js/bootstrap.bundle.min'
-import Popper from 'popper.js'
-import $ from 'jquery'
-import { 
+// import 'bootstrap/dist/js/bootstrap.bundle.min'
+// import Popper from 'popper.js'
+// import $ from 'jquery'
+import {
   React,
   ReactDOM,
   Provider,
