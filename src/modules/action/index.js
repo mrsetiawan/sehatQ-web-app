@@ -9,6 +9,25 @@ export const getProductList = () => {
   }
 }
 
+export const addWishlist = (wishlist) => {
+  return dispatch => {
+    dispatch({
+      type: appConstants.ADD_WISHLIST,
+      payload: { wishlist }
+    })
+  }
+}
+
+export const addCart = (cart) => {
+  // console.log('ini', cart)
+  return dispatch => {
+    dispatch({
+      type: appConstants.ADD_CART,
+      payload: { cart }
+    })
+  }
+}
+
 const productRequest = () => ({
   type: appConstants.GET_LIST_PRODUCT_REQUEST
 })

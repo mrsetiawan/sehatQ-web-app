@@ -10,13 +10,10 @@ const Navigator = () => {
     route: '/',
     label: 'Home'
   }, {
-    route: '/search',
-    label: 'Feed'
+    route: '/purchased',
+    label: 'Purchased'
   }, {
-    route: '/login',
-    label: 'Cart'
-  }, {
-    route: '/login',
+    route: '/wishlist',
     label: 'Profile'
   }]
 

@@ -7,6 +7,7 @@ import axios from 'axios'
 import Slider from 'react-slick'
 import { Helmet } from 'react-helmet'
 import FacebookLogin from 'react-facebook-login'
+import { useGoogleLogin } from 'react-google-login'
 import Skeleton from 'react-loading-skeleton'
 import loadable from '@loadable/component'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
@@ -25,7 +26,8 @@ export {
   Helmet,
   FacebookLogin,
   Skeleton,
-  LazyLoadImage
+  LazyLoadImage,
+  useGoogleLogin
 }
 
 export * from 'react'
@@ -40,6 +42,7 @@ export * from '@loadable/component'
 export * from 'react-helmet'
 export * from 'react-bootstrap'
 export * from 'react-facebook-login'
+export * from 'react-google-login'
 export * from '@fortawesome/free-solid-svg-icons'
 export * from '@fortawesome/react-fontawesome'
 export * from 'react-loading-skeleton'

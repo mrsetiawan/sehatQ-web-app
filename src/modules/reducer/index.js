@@ -4,7 +4,9 @@ import { appConstants } from '../../helpers'
 const initialState = {
   list: {},
   loading: true,
-  error: null
+  error: null,
+  wishlist: [],
+  cart: []
 }
 
 const listData = (state = initialState, action) => {
@@ -24,6 +26,16 @@ const listData = (state = initialState, action) => {
       return {
         ...state,
         error: action.payload.message
+      }
+    case appConstants.ADD_WISHLIST :
+      return {
+        ...state,
+        wishlist: [...state.wishlist, action.payload.wishlist]
+      }
+    case appConstants.ADD_CART :
+      return {
+        ...state,
+        cart: [...state.cart, action.payload.cart]
       }
     default :
       return state
